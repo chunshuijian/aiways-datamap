@@ -1,0 +1,69 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    mysqlMain:
+  #   mysql数据源基本配置
+      username: jianchunshui
+      password: Jianchunshui.0
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://10.100.11.20:3306/hive?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true
+      type: com.alibaba.druid.pool.DruidDataSource
+  #   mysql数据源其他配置
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+  #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      maxPoolPreparedStatementPerConnectionSize: 20
+      useGlobalDataSourceStat: true
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#    hive:
+#      url: jdbc:hive2://192.168.30.104:10000/default
+#      driver-class-name: org.apache.hive.jdbc.HiveDriver
+#      type: com.alibaba.druid.pool.DruidDataSource
+#      user: root
+#      password: 123456
+#      initialSize: 1
+#      minIdle: 3
+#      maxActive: 20
+#      maxWait: 6000
+#      timeBetweenEvictionRunsMillis: 60000
+#      minEvictableIdleTimeMillis: 30000
+#      validationQuery: select 1
+#      testWhileIdle: true
+#      testOnBorrow: false
+#      testOnReturn: false
+#      poolPreparedStatements: true
+#      maxPoolPreparedStatementPerConnectionSize: 20
+#      connectionErrorRetryAttempts: 0
+#      breakAfterAcquireFailure: true
+mybatis:
+  # 指定全局配置文件位置
+  config-location: classpath:mybatis/mybatis-config.xml
+  # 指定sql映射文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+#hadoop 配置
+hadoop:
+  #hadoop的hdfs访问地址
+  nameNode: hdfs://hadoop102:9000
+  #hive对应的hdfs上的数据库存储路径
+  directoryPath: /user/hive/warehouse
+
+#UPM登录配置
+upm:
+  client:
+    secret: 6a80224e06d4c891b2c150726ea6a04b
+    index: https://boss-dev.ai-ways.com/#/admin
+    id: boss
+  server:
+    address: https://boss-api-dev.ai-ways.com
