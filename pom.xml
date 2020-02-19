@@ -38,7 +38,7 @@
 		<hadoop.hdfs.version>2.7.4</hadoop.hdfs.version>
 		<hadoop.client.version>2.7.4</hadoop.client.version>
 		<hadoop.mapreduce.client.core.version>2.7.4</hadoop.mapreduce.client.core.version>
-		<hive.version>1.2.1</hive.version>
+		<hive.version>2.3.4</hive.version>
 		<!--爱驰upm-->
 		<aiways.upm.sdk.version>4.5-SNAPSHOT</aiways.upm.sdk.version>
 
