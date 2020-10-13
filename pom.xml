@@ -32,7 +32,7 @@
 		<lombok.version>1.16.20</lombok.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<hadoop.common.version>2.7.4</hadoop.common.version>
 		<hadoop.hdfs.version>2.7.4</hadoop.hdfs.version>
